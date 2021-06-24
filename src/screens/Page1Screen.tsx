@@ -8,7 +8,7 @@ interface Props extends StackScreenProps<any, any>{}
 export const Page1Screen = (props:Props) => {    
     return (
         <View style={Styles.globalMargin}>
-            <Text>Page 1 Screen</Text>
+            <Text style={Styles.title}>Page 1 Screen</Text>
 
             <Button
                 title='Ir a Screen 2'
