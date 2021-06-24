@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import { StackScreenProps } from '@react-navigation/stack'
 import { Styles } from '../theme/Styles'
 
@@ -14,6 +14,18 @@ export const Page1Screen = (props:Props) => {
                 title='Ir a Screen 2'
                 onPress={()=> props.navigation.navigate('Page2Screen')}    
             />
+
+            <Text style={Styles.title}>Navegar a usuario Screen</Text>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('UserScreen', {
+                    id: 1,
+                    name: 'Chris'
+                }) }
+            >
+                <Text>Ir a Usuario</Text>
+            </TouchableOpacity>
+
+
         </View>
     )
 }
