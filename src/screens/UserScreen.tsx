@@ -2,9 +2,18 @@ import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { useEffect } from 'react'
 import { Text, View } from 'react-native'
+import { RootStackParams } from '../navigator/StackNavigator'
 import { Styles } from '../theme/Styles'
 
-interface Props extends StackScreenProps<any, any>{}
+/*  // Fast way for set route params interface //
+interface RouteParams {
+    id: number,
+    name: string
+}
+const params = route.params as RouteParams
+*/
+
+interface Props extends StackScreenProps<RootStackParams, 'UserScreen'>{}
 
 export const UserScreen = ({ navigation, route }: Props) => {
     /* 1° first way get params
@@ -16,7 +25,7 @@ export const UserScreen = ({ navigation, route }: Props) => {
 
     useEffect(()=>{
         navigation.setOptions({
-            title: params!.name
+            title: params.name
         })
     },[])
 
