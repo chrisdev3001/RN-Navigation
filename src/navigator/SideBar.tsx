@@ -7,9 +7,11 @@ const Drawer = createDrawerNavigator();
 
 export function SideBar() {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
-      <Drawer.Screen name="SettingScreen" component={SettingScreen} />
+    <Drawer.Navigator
+      drawerPosition="left"
+    >
+      <Drawer.Screen name="StackNavigator" options={{ title: 'Home '}} component={StackNavigator} />
+      <Drawer.Screen name="SettingScreen" options={{ title: 'Settings'}} component={SettingScreen} />
     </Drawer.Navigator>
   );
 }
