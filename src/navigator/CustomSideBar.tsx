@@ -5,8 +5,21 @@ import { SettingScreen } from '../screens/SettingScreen';
 import { StackNavigator } from './StackNavigator';
 import { Styles } from '../theme/Styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+/* import { createStackNavigator } from '@react-navigation/stack'; */
 
 const Drawer = createDrawerNavigator();
+
+/* const Stack = createStackNavigator();
+const SettingsStackScreen = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen 
+        name="SettingsScreen"
+        component={ SettingScreen }
+      />      
+    </Stack.Navigator>
+  )
+} */
 
 export function CustomSideBar() {
   const { width } = useWindowDimensions()
