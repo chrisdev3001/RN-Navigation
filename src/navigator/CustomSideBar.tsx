@@ -2,9 +2,10 @@ import React from 'react'
 import { Image, Text, useWindowDimensions, View } from 'react-native'
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView } from '@react-navigation/drawer';
 import { SettingScreen } from '../screens/SettingScreen';
-import { StackNavigator } from './StackNavigator';
+/* import { StackNavigator } from './StackNavigator'; */
 import { Styles } from '../theme/Styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Tabs } from './Tabs';
 /* import { createStackNavigator } from '@react-navigation/stack'; */
 
 const Drawer = createDrawerNavigator();
@@ -29,7 +30,7 @@ export function CustomSideBar() {
       drawerType={width >= 768 ? 'permanent' : 'front'}
       drawerContent={ (props) => <CustomMenu {...props} />}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingScreen" component={SettingScreen} />
     </Drawer.Navigator>
   );
@@ -50,7 +51,7 @@ const CustomMenu = ( { navigation }: DrawerContentComponentProps<DrawerContentOp
 
       <View style={Styles.menuContainer}>
         <TouchableOpacity 
-          onPress={() => navigation.navigate('StackNavigator')}
+          onPress={() => navigation.navigate('Tabs')}
           style={Styles.menuButton}
         >
           <Text style={Styles.menuTexto}>Navegación</Text>
